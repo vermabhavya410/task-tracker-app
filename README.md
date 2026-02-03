@@ -1,16 +1,50 @@
-# React + Vite
+# Task Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **modern and interactive Task Tracker app** built with **React.js** and **Tailwind CSS**, designed to help users manage their daily tasks efficiently. The app supports adding, editing, deleting, and filtering tasks, with a clean and responsive user interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Key Features
 
-## React Compiler
+- **Add Tasks**: Quickly add new tasks with a single input.
+- **Edit Tasks**: Modify existing tasks seamlessly.
+- **Delete Tasks**: Remove tasks that are completed or no longer needed.
+- **Mark as Completed**: Toggle tasks as completed or pending using checkboxes.
+- **Filter Tasks**: View all tasks, only active tasks, or completed tasks.
+- **Responsive UI**: Works smoothly on both desktop and mobile screens.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React.js (Functional Components & Hooks)
+- **Styling:**  Custom CSS (`Task Tracker.css`)
+- **State Management:** React `useState` hook
+- **Version Control:** Git & GitHub
+---
+
+## 📝 Code Overview
+
+The app manages tasks using **React hooks**:
+
+- **State Variables**:
+  - `Input` → Holds the value of the input box.
+  - `List` → Stores all tasks as objects `{ text, completed }`.
+  - `Filter` → Controls which tasks are displayed (`all`, `active`, `completed`).
+  - `editIndex` → Tracks which task is being edited.
+  - `editText` → Holds the edited task text.
+
+- **Functions**:
+  - `add()` → Adds a new task to the list.
+  - `remove(index)` → Deletes a task by its index.
+  - `startEdit(index)` → Begins editing a task.
+  - `saveEdit(index)` → Saves edited task text.
+  - `togglecheckbox(index)` → Toggles task completion status.
+  
+- **Filtering Logic**:
+```javascript
+const filteredTasks = List.filter(task => {
+  if (Filter === "active") return !task.completed;
+  if (Filter === "completed") return task.completed;
+  return true; 
+});
