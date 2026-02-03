@@ -1,0 +1,156 @@
+
+.main {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #1f2937; 
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  font-family: 'Arial', sans-serif;
+  color: #f9fafb;
+}
+
+
+.main > div:first-child {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+
+button {
+  background-color: #3b82f6;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+
+.main > div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap; 
+  gap: 10px;
+}
+
+
+input[type="text"] {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #9ca3af;
+  outline: none;
+  min-width: 0; 
+}
+
+input[type="text"]:focus {
+  border-color: #3b82f6;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #374151;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: transform 0.1s;
+  flex-wrap: wrap; 
+}
+
+li:hover {
+  transform: scale(1.02);
+}
+
+
+li span {
+  flex: 1;
+  margin-left: 10px;
+  word-break: break-word;
+}
+
+
+li input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+
+li input[type="text"] {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #9ca3af;
+  margin-right: 6px;
+  outline: none;
+  min-width: 0;
+}
+
+li input[type="text"]:focus {
+  border-color: #3b82f6;
+}
+
+
+li button {
+  margin-left: 6px;
+  background-color: #10b981;
+  font-size: 0.9rem;
+  padding: 4px 10px;
+  margin-top: 6px; 
+}
+
+li button:hover {
+  opacity: 0.9;
+}
+
+
+li button:nth-child(n+4) { 
+  background-color: #ef4444;
+}
+
+
+@media (max-width: 500px) {
+  .main {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .main > div:nth-child(2) {
+    flex-direction: column; 
+    gap: 10px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li span {
+    margin-left: 0;
+    margin-bottom: 8px;
+  }
+
+  li button {
+    margin-left: 0;
+    margin-right: 6px;
+  }
+}
